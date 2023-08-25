@@ -25,6 +25,7 @@ import RightPanelStore from "../../stores/right-panel/RightPanelStore";
 import MatrixClientContext from "../../contexts/MatrixClientContext";
 import RoomSummaryCard from "../views/right_panel/RoomSummaryCard";
 import WidgetCard from "../views/right_panel/WidgetCard";
+import PaySwapCard from "../views/right_panel/PaySwapCard";
 import SettingsStore from "../../settings/SettingsStore";
 import MemberList from "../views/rooms/MemberList";
 import UserInfo from "../views/right_panel/UserInfo";
@@ -301,6 +302,11 @@ export default class RightPanel extends React.Component<Props, IState> {
             case RightPanelPhases.Widget:
                 if (!!this.props.room && !!cardState?.widgetId) {
                     card = <WidgetCard room={this.props.room} widgetId={cardState.widgetId} onClose={this.onClose} />;
+                }
+                break;
+            case RightPanelPhases.PaySwap:
+                if (!!this.props.room) {
+                    card = <PaySwapCard room={this.props.room} onClose={this.onClose} />;
                 }
                 break;
         }

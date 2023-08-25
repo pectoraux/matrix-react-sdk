@@ -286,7 +286,8 @@ const CallButtons: FC<CallButtonsProps> = ({ room }) => {
 
     if (isVideoRoom || !showButtons) {
         return null;
-    } else if (groupCallsEnabled) {
+    } 
+    else if (groupCallsEnabled) {
         if (useElementCallExclusively) {
             if (hasGroupCall) {
                 return makeVideoCallButton(new DisabledWithReason(_t("Ongoing call")));

@@ -19,6 +19,7 @@ import { _t } from "../../languageHandler";
 // These are in their own file because of circular imports being a problem.
 export enum RightPanelPhases {
     // Room stuff
+    PaySwap = "PaySwap",
     RoomMemberList = "RoomMemberList",
     FilePanel = "FilePanel",
     NotificationPanel = "NotificationPanel",

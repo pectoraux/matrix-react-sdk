@@ -245,6 +245,11 @@ export default class LegacyRoomHeaderButtons extends HeaderButtons<IProps> {
         }
     };
 
+    private onPaySwapClicked = (): void => {
+        // toggles the PaySwap widget
+        this.setPhase(RightPanelPhases.PaySwap);
+    }; 
+
     private onNotificationsClicked = (): void => {
         // This toggles for us, if needed
         this.setPhase(RightPanelPhases.NotificationPanel);
@@ -292,6 +297,16 @@ export default class LegacyRoomHeaderButtons extends HeaderButtons<IProps> {
                 room={this.props.room}
                 isHighlighted={this.isPhase(RightPanelPhases.Timeline)}
                 onClick={this.onTimelineCardClicked}
+            />,
+        );
+        rightPanelPhaseButtons.set(
+            RightPanelPhases.PaySwap,
+            <HeaderButton
+                key="PaySwap"
+                name="PaySwap"
+                title="PaySwap"
+                isHighlighted={this.isPhase(RightPanelPhases.PaySwap)}
+                onClick={this.onPaySwapClicked}
             />,
         );
         rightPanelPhaseButtons.set(

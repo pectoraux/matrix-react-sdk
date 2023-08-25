@@ -58,11 +58,13 @@ export default abstract class HeaderButtons<P = {}> extends React.Component<IPro
     }
 
     public componentDidMount(): void {
+        console.log("setPhase4================>")
         RightPanelStore.instance.on(UPDATE_EVENT, this.onRightPanelStoreUpdate);
         this.dispatcherRef = dis.register(this.onAction.bind(this)); // used by subclasses
     }
 
     public componentWillUnmount(): void {
+        console.log("setPhase3================>")
         this.unmounted = true;
         RightPanelStore.instance.off(UPDATE_EVENT, this.onRightPanelStoreUpdate);
         if (this.dispatcherRef) dis.unregister(this.dispatcherRef);
@@ -72,9 +74,12 @@ export default abstract class HeaderButtons<P = {}> extends React.Component<IPro
 
     public setPhase(phase: RightPanelPhases, cardState?: Partial<IRightPanelCardState>): void {
         const rps = RightPanelStore.instance;
+        console.log("setPhase================>", rps, phase, cardState)
         if (rps.currentCard.phase == phase && !cardState && rps.isOpen) {
+            console.log("setPhase1================>")
             rps.togglePanel(null);
         } else {
+            console.log("setPhase2================>")
             RightPanelStore.instance.setCard({ phase, state: cardState });
             if (!rps.isOpen) rps.togglePanel(null);
         }
