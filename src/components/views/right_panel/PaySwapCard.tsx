@@ -32,10 +32,10 @@ const PaySwapCard: React.FC<IProps> = ({ room, onClose }) => {
     const app = {
         "avatar_url": "mxc://integrations.ems.host/14b405c441e0fcc3c9034034d94ea555e37f84fc",
         "data": {
-            "title": "PaySwap",
+            "title": "PaySwap!",
             "url": "https://payswap.org/"
         },
-        "name": "PaySwap",
+        "name": "PaySwap!",
         "type": "m.custom",
         "url": "https://scalar.vector.im/api/widgets/generic.html?url=$url",
         "creatorUserId": "@ekontetevi:matrix.org",
