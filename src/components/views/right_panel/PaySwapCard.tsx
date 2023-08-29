@@ -33,7 +33,7 @@ const PaySwapCard: React.FC<IProps> = ({ room, onClose }) => {
         "avatar_url": "mxc://integrations.ems.host/14b405c441e0fcc3c9034034d94ea555e37f84fc",
         "data": {
             "title": "PaySwap",
-            "url": "https://pay8-2v-qor073td0-ekontetevi-gmailcom.vercel.app/"
+            "url": "https://payswap.org/"
         },
         "name": "PaySwap",
         "type": "m.custom",
